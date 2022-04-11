@@ -49,7 +49,7 @@ public class BasicApiStepDefinitions {
     public void dataIsRetrieved() {
         //Validating response
         Assert.assertTrue("Response is not returned",response.isSuccess());
-        Assert.assertEquals("Status code is not 201",response.getStatus(),201);
+        Assert.assertEquals("Status code is not 201",201,response.getStatus());
         //Logging response in Allure
         Allure.addAttachment("Response that is returned ", response.getBody().toPrettyString());
     }
