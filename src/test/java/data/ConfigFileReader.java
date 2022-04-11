@@ -9,7 +9,7 @@ import java.util.Properties;
 public class ConfigFileReader {
 
     private Properties properties;
-    private final String propertyFilePath= "configs//Configuration.properties";
+    private final String propertyFilePath= "config//config.properties";
 
     public ConfigFileReader() {
         BufferedReader reader;
@@ -28,10 +28,27 @@ public class ConfigFileReader {
         }
     }
 
-    public String getParameter1() {
-        String url = properties.getProperty("url");
+    public String getWiremockServerUrl() {
+        String url = properties.getProperty("wiremock.server.url");
         if(url != null) return url;
-        else throw new RuntimeException("url not specified in the Configuration.properties file.");
+        else throw new RuntimeException("wiremock.server.url not specified in the Configuration.properties file.");
     }
 
+    public String getWiremockServerPort() {
+        String url = properties.getProperty("wiremock.server.port");
+        if(url != null) return url;
+        else throw new RuntimeException("wiremock.server.port not specified in the Configuration.properties file.");
+    }
+
+    public String getWiremockServerEndpoint() {
+        String url = properties.getProperty("wiremock.server.endpoint");
+        if(url != null) return url;
+        else throw new RuntimeException("wiremock.server.endpoint not specified in the Configuration.properties file.");
+    }
+
+    public String getWiremockServerContentType() {
+        String url = properties.getProperty("wiremock.server.content.type");
+        if(url != null) return url;
+        else throw new RuntimeException("wiremock.server.content.type not specified in the Configuration.properties file.");
+    }
 }

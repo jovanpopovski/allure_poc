@@ -1,2 +1,6 @@
-TestRunner.class
+builders\ResponseBuilder.class
+builders\RequestBuilder.class
+builders\WiremockServiceBuilder.class
 stepdefinitions\BasicApiStepDefinitions.class
+data\ConfigFileReader.class
+TestRunner.class
